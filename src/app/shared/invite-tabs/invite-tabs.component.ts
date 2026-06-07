@@ -49,7 +49,7 @@ export class InviteTabsComponent {
     }
 
     return this.variant === 'dark'
-      ? 'focus-ring border-b border-almanac-silver pb-1 text-sm font-semibold uppercase tracking-[0.2em] text-almanac-silver transition hover:border-almanac-gold hover:text-almanac-champagne'
-      : 'focus-ring border-b border-almanac-silver pb-1 text-sm font-semibold uppercase tracking-[0.2em] text-almanac-silver transition hover:border-almanac-cocoa hover:text-almanac-cocoa';
+      ? 'focus-ring border-b border-almanac-silver pb-1 text-sm font-semibold uppercase tracking-[0.2em] text-almanac-silver transition'
+      : 'focus-ring border-b border-almanac-silver pb-1 text-sm font-semibold uppercase tracking-[0.2em] text-almanac-silver transition';
   }
 }
