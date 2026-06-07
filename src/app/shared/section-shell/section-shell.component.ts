@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
 })
 export class SectionShellComponent {
   @Input({ required: true }) eyebrow = '';
-  @Input({ required: true }) title = '';
+  @Input() title = '';
   @Input() intro = '';
 
 }

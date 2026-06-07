@@ -1,21 +1,22 @@
 <div id="program">
   <app-section-shell
     eyebrow="Программа"
-    title="День свадьбы"
     intro="Расписание еще может немного измениться ближе к дате."
   >
     <div class="flex flex-col gap-4">
       @for (item of content.program; track item.time + item.title; let index = $index) {
         <article class="overflow-hidden rounded-lg border border-almanac-ink/12 bg-white/70 shadow-soft">
           <button
-            class="focus-ring grid w-full gap-4 px-5 py-5 text-left md:grid-cols-[10rem_1fr_11rem] md:items-center md:px-7"
+            class="focus-ring grid w-full gap-1 px-5 py-5 text-left md:grid-cols-[10rem_1fr_11rem] md:items-center md:px-7"
             type="button"
             [attr.aria-expanded]="expandedIndex === index"
             (click)="toggle(index)"
           >
             <time class="font-display text-3xl font-semibold text-almanac-plum">{{ item.time }}</time>
             <span class="flex flex-col gap-2">
-              <span class="text-xl font-semibold">{{ item.title }}</span>
+              @if(expandedIndex !== index) {
+                <span class="text-xl font-semibold">{{ item.title }}</span>
+              }
               <span class="text-sm leading-6 text-almanac-ink/62">{{ expandedIndex === index ? 'Свернуть детали' : 'Нажмите, чтобы раскрыть детали' }}</span>
             </span>
             <span class="text-sm font-semibold uppercase tracking-[0.16em] text-almanac-gold">{{ item.room }}</span>
@@ -28,9 +29,8 @@
 
               <div class="relative flex min-h-[24rem] items-end p-5 text-white md:min-h-[30rem] md:p-8">
                 <div class="flex max-w-2xl flex-col gap-4">
-                  <p class="text-xs font-semibold uppercase tracking-[0.22em] text-almanac-gold">{{ item.room }}</p>
                   <div class="flex flex-col gap-2">
-                    <h3 class="font-display text-5xl font-semibold md:text-7xl">{{ item.title }}</h3>
+                    <h3 class="font-display text-3xl font-semibold md:text-7xl">{{ item.title }}</h3>
                     <time class="text-lg font-semibold text-white/82">{{ item.time }}</time>
                   </div>
                   <p class="text-lg leading-8 text-white/82 md:text-xl">{{ item.details }}</p>
