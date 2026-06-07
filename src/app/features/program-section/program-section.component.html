@@ -22,17 +22,23 @@
           </button>
 
           @if (expandedIndex === index) {
-            <div class="relative min-h-[24rem] overflow-hidden md:min-h-[30rem]">
-              <img class="absolute inset-0 h-full w-full object-cover" [src]="item.image" [alt]="item.title" />
-              <div class="absolute inset-0 bg-gradient-to-t from-almanac-ink via-almanac-ink/55 to-almanac-ink/10"></div>
+            <div class="overflow-hidden bg-almanac-parchment">
+              <div class="relative aspect-[4/3] overflow-hidden md:aspect-[3/2]">
+                <img class="absolute inset-0 h-full w-full object-cover" [src]="item.image" [alt]="item.title" />
+                <div class="absolute inset-0 bg-gradient-to-t from-almanac-ink/72 via-almanac-ink/18 to-transparent"></div>
+                <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-almanac-parchment/72 to-almanac-parchment backdrop-blur-[1px]"></div>
 
-              <div class="relative flex min-h-[24rem] items-end p-5 text-white md:min-h-[30rem] md:p-8">
-                <div class="flex max-w-2xl flex-col gap-4">
-                  <div class="flex flex-col gap-2">
-                    <h3 class="font-display text-3xl font-semibold md:text-7xl">{{ item.title }}</h3>
-                  </div>
-                  <p class="whitespace-pre-line text-lg leading-8 text-white/82 md:text-xl">{{ item.details }}</p>
+                <div class="relative flex h-full items-end p-5 text-almanac-ink/70 md:p-8">
+                  <h3 class="max-w-3xl font-display text-3xl font-semibold leading-tight md:text-7xl">
+                    {{ item.title }}
+                  </h3>
                 </div>
+              </div>
+
+              <div class="px-5 pb-7 pt-2 md:px-8 md:pb-9 md:pt-3">
+                <p class="max-w-3xl whitespace-pre-line text-lg leading-8 text-almanac-ink/76 md:text-xl">
+                  {{ item.details }}
+                </p>
               </div>
             </div>
           }
