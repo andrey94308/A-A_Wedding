@@ -1,17 +1,15 @@
-<section class="relative flex min-h-[92svh] items-end overflow-hidden bg-almanac-ink px-5 py-8 text-white md:px-8 md:py-10">
-  <img
-    class="absolute inset-0 h-full w-full object-cover"
-    [src]="content.heroImage"
-    alt="Залы Almanac Palais Vienna"
-  />
-  <div class="absolute inset-0 bg-gradient-to-t from-almanac-ink via-almanac-ink/45 to-almanac-ink/10"></div>
+<section class="relative flex min-h-[92svh] flex-col justify-end overflow-hidden bg-almanac-ink text-white">
+  <div class="absolute inset-0">
+    <img
+      class="h-full w-full object-cover"
+      [src]="content.heroImage"
+      alt="Залы Almanac Palais Vienna"
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-almanac-ink via-almanac-ink/45 to-almanac-ink/10"></div>
+  </div>
 
-  <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
-    <nav class="flex flex-col items-start gap-3 text-sm font-semibold uppercase tracking-[0.22em] text-white/85 sm:flex-row sm:items-center sm:justify-between md:text-base">
-      <span>{{ content.venueName }}</span>
-    </nav>
-
-    <div class="flex w-full max-w-[21rem] flex-col gap-7 pb-8 sm:max-w-4xl">
+  <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-5 py-8 md:px-8 md:py-10">
+    <div class="flex w-full max-w-[21rem] flex-col gap-7 sm:max-w-4xl">
       <div class="flex flex-col gap-4">
         <h1 class="max-w-full font-display text-5xl font-semibold leading-none sm:text-6xl md:text-8xl">{{ content.couple }}</h1>
         <p class="font-display text-4xl font-semibold leading-none text-almanac-champagne sm:text-5xl md:text-6xl">{{ content.dateDisplay }}</p>
@@ -21,4 +19,10 @@
       </div>
     </div>
   </div>
+
+  <footer class="relative bg-almanac-ink px-5 py-5 md:px-8">
+    <div class="mx-auto flex max-w-6xl flex-col gap-1">
+      <p class="text-sm font-semibold uppercase tracking-[0.22em] text-white/86 md:text-base">{{ content.venueName }}</p>
+    </div>
+  </footer>
 </section>

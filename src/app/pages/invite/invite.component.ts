@@ -9,7 +9,6 @@ import { HeroSectionComponent } from '../../features/hero-section/hero-section.c
 import { ProgramSectionComponent } from '../../features/program-section/program-section.component';
 import { RsvpSectionComponent } from '../../features/rsvp-section/rsvp-section.component';
 import { UpdatesSectionComponent } from '../../features/updates-section/updates-section.component';
-import { VenueSectionComponent } from '../../features/venue-section/venue-section.component';
 
 @Component({
   selector: 'app-invite',
@@ -17,7 +16,6 @@ import { VenueSectionComponent } from '../../features/venue-section/venue-sectio
   imports: [
     AsyncPipe,
     HeroSectionComponent,
-    VenueSectionComponent,
     ProgramSectionComponent,
     UpdatesSectionComponent,
     RsvpSectionComponent,
