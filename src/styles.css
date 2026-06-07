@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-almanac-parchment font-body text-almanac-ink antialiased;
+    @apply overflow-x-hidden bg-almanac-parchment font-body text-almanac-ink antialiased;
   }
 
   button,
