@@ -1,13 +1,13 @@
 <div id="rsvp">
   <app-section-shell
-    eyebrow="RSVP"
-    title="Stay in touch"
-    intro="Leave your email and answer so we can send changes about seating, dress code and timing."
+    eyebrow="Ответ"
+    title="Будем на связи"
+    intro="Оставьте e-mail и ответ, чтобы мы могли отправить изменения по рассадке, дресс-коду и времени."
   >
     <form class="glass-panel grid gap-6 rounded-lg p-6 md:grid-cols-[1fr_0.9fr] md:p-8" [formGroup]="form" (ngSubmit)="submit()">
       <div class="flex flex-col gap-5">
         <label class="flex flex-col gap-2">
-          <span class="text-sm font-semibold">Email</span>
+          <span class="text-sm font-semibold">E-mail</span>
           <input
             class="focus-ring rounded-md border border-almanac-ink/15 bg-white px-4 py-3"
             type="email"
@@ -18,39 +18,39 @@
         </label>
 
         <fieldset class="flex flex-col gap-3">
-          <legend class="text-sm font-semibold">Will you attend?</legend>
+          <legend class="text-sm font-semibold">Вы сможете прийти?</legend>
           <div class="grid gap-2 sm:grid-cols-3">
             <label class="focus-within:ring-almanac-gold flex cursor-pointer items-center justify-center gap-2 rounded-md border border-almanac-ink/15 bg-white px-4 py-3 text-sm font-semibold">
               <input type="radio" value="yes" formControlName="attending" />
-              Yes
+              Да
             </label>
             <label class="focus-within:ring-almanac-gold flex cursor-pointer items-center justify-center gap-2 rounded-md border border-almanac-ink/15 bg-white px-4 py-3 text-sm font-semibold">
               <input type="radio" value="maybe" formControlName="attending" />
-              Maybe
+              Пока не знаю
             </label>
             <label class="focus-within:ring-almanac-gold flex cursor-pointer items-center justify-center gap-2 rounded-md border border-almanac-ink/15 bg-white px-4 py-3 text-sm font-semibold">
               <input type="radio" value="no" formControlName="attending" />
-              No
+              Нет
             </label>
           </div>
         </fieldset>
 
         <label class="flex flex-col gap-2">
-          <span class="text-sm font-semibold">Message</span>
+          <span class="text-sm font-semibold">Сообщение</span>
           <textarea
             class="focus-ring min-h-32 rounded-md border border-almanac-ink/15 bg-white px-4 py-3"
             formControlName="message"
-            placeholder="Dietary notes, plus one details, anything we should know..."
+            placeholder="Пожелания по еде, детали по плюс один или что-то еще, что нам важно знать..."
           ></textarea>
         </label>
       </div>
 
       <aside class="flex flex-col justify-between gap-6 rounded-lg bg-almanac-ink p-6 text-white">
         <div class="flex flex-col gap-3">
-          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-almanac-gold">Invitation for</p>
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-almanac-gold">Приглашение для</p>
           <h3 class="font-display text-4xl font-semibold">{{ guest.firstName }} {{ guest.lastName }}</h3>
           @if (guest.partySize) {
-            <p class="text-white/70">Party size: {{ guest.partySize }}</p>
+            <p class="text-white/70">Количество гостей: {{ guest.partySize }}</p>
           }
           @if (guest.note) {
             <p class="text-sm leading-6 text-white/70">{{ guest.note }}</p>
@@ -59,13 +59,13 @@
 
         <div class="flex flex-col gap-3">
           <button class="focus-ring bg-white px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-almanac-ink disabled:opacity-60" type="submit" [disabled]="isSubmitting">
-            {{ isSubmitting ? 'Sending...' : 'Send RSVP' }}
+            {{ isSubmitting ? 'Отправляем...' : 'Отправить ответ' }}
           </button>
           @if (submitState === 'sent') {
-            <p class="text-sm text-almanac-champagne">Saved locally for now. Add Apps Script URL to write into Google Sheets.</p>
+            <p class="text-sm text-almanac-champagne">Спасибо, мы получили ваш ответ.</p>
           }
           @if (submitState === 'error') {
-            <p class="text-sm text-almanac-champagne">Could not send. Please try again later.</p>
+            <p class="text-sm text-almanac-champagne">Не удалось отправить. Попробуйте позже.</p>
           }
         </div>
       </aside>

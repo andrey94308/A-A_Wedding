@@ -1,19 +1,18 @@
 @if (guest$ | async; as guest) {
   <main class="min-h-screen">
     <app-hero-section [guest]="guest" [content]="content"></app-hero-section>
-    <app-venue-section [content]="content"></app-venue-section>
     <app-program-section [content]="content"></app-program-section>
-    <app-menu-section [content]="content"></app-menu-section>
     <app-updates-section [guest]="guest" [content]="content"></app-updates-section>
     <app-rsvp-section [guest]="guest"></app-rsvp-section>
+    <app-venue-section [content]="content"></app-venue-section>
   </main>
 } @else {
   <main class="flex min-h-screen items-center justify-center bg-almanac-ink px-5 text-white">
     <section class="flex max-w-xl flex-col gap-5 text-center">
-      <p class="eyebrow text-almanac-gold">Invitation not found</p>
-      <h1 class="font-display text-5xl font-semibold">Please check your invite link</h1>
+      <p class="eyebrow text-almanac-gold">Приглашение не найдено</p>
+      <h1 class="font-display text-5xl font-semibold">Проверьте ссылку на приглашение</h1>
       <p class="leading-7 text-white/70">
-        The UUID in this URL does not match the guest list yet.
+        UUID в этой ссылке пока не найден в списке гостей.
       </p>
     </section>
   </main>

@@ -1,7 +1,7 @@
 <app-section-shell
-  eyebrow="Updates"
-  title="Details to follow"
-  intro="We will keep this page updated as the final details become available."
+  eyebrow="Обновления"
+  title="Детали появятся позже"
+  intro="Мы будем обновлять эту страницу, когда финальные детали будут готовы."
 >
   <div class="grid gap-4 md:grid-cols-3">
     @for (update of content.updates; track update) {
@@ -12,7 +12,7 @@
 
     @if (guest.tableName) {
       <article class="rounded-lg bg-almanac-ink p-6 text-white">
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-almanac-gold">Table</p>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-almanac-gold">Стол</p>
         <p class="pt-4 font-display text-4xl">{{ guest.tableName }}</p>
       </article>
     }

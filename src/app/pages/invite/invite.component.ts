@@ -6,7 +6,6 @@ import { map, switchMap } from 'rxjs';
 import { WEDDING_CONTENT } from '../../core/wedding-content';
 import { InviteDataService } from '../../core/invite-data.service';
 import { HeroSectionComponent } from '../../features/hero-section/hero-section.component';
-import { MenuSectionComponent } from '../../features/menu-section/menu-section.component';
 import { ProgramSectionComponent } from '../../features/program-section/program-section.component';
 import { RsvpSectionComponent } from '../../features/rsvp-section/rsvp-section.component';
 import { UpdatesSectionComponent } from '../../features/updates-section/updates-section.component';
@@ -20,7 +19,6 @@ import { VenueSectionComponent } from '../../features/venue-section/venue-sectio
     HeroSectionComponent,
     VenueSectionComponent,
     ProgramSectionComponent,
-    MenuSectionComponent,
     UpdatesSectionComponent,
     RsvpSectionComponent,
   ],

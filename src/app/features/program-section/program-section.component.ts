@@ -13,4 +13,9 @@ import { SectionShellComponent } from '../../shared/section-shell/section-shell.
 export class ProgramSectionComponent {
   @Input({ required: true }) content!: WeddingContent;
 
+  expandedIndex = 0;
+
+  toggle(index: number): void {
+    this.expandedIndex = this.expandedIndex === index ? -1 : index;
+  }
 }

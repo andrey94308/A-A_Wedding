@@ -13,19 +13,7 @@ export interface ProgramItem {
   title: string;
   room: string;
   details: string;
-}
-
-export interface VenueRoom {
-  name: string;
   image: string;
-  role: string;
-  description: string;
-}
-
-export interface MenuCourse {
-  label: string;
-  title: string;
-  details: string;
 }
 
 export interface WeddingContent {
@@ -35,8 +23,6 @@ export interface WeddingContent {
   venueName: string;
   venueAddress: string;
   heroImage: string;
-  rooms: VenueRoom[];
   program: ProgramItem[];
-  menu: MenuCourse[];
   updates: string[];
 }
