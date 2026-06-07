@@ -45,7 +45,7 @@ export class InviteTabsComponent {
 
   get linkClass(): string {
     if (this.variant === 'landing') {
-      return 'focus-ring border-b border-almanac-silver pb-1 text-lg font-semibold uppercase tracking-[0.22em] text-almanac-silver transition hover:border-almanac-cocoa hover:text-almanac-cocoa';
+      return 'focus-ring border-b border-almanac-cocoa/70 pb-1 text-lg font-semibold uppercase tracking-[0.22em] text-almanac-cocoa [text-shadow:_0_1px_12px_rgb(255_249_240_/_0.85)] transition hover:border-almanac-ink hover:text-almanac-ink';
     }
 
     return this.variant === 'dark'
