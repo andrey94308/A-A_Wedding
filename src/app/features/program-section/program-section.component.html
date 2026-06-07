@@ -26,7 +26,8 @@
               <div class="relative aspect-[4/3] overflow-hidden md:aspect-[3/2]">
                 <img class="absolute inset-0 h-full w-full object-cover" [src]="item.image" [alt]="item.title" />
                 <div class="absolute inset-0 bg-gradient-to-t from-almanac-ink/72 via-almanac-ink/18 to-transparent"></div>
-                <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-almanac-parchment/72 to-almanac-parchment backdrop-blur-[1px]"></div>
+                <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-almanac-parchment/45 via-60% to-almanac-parchment"></div>
+                <div class="absolute inset-x-0 bottom-0 h-24 bg-almanac-parchment/18 backdrop-blur-[2px] [mask-image:linear-gradient(to_bottom,transparent,black_35%,transparent)]"></div>
 
                 <div class="relative flex h-full items-end p-5 text-almanac-ink/70 md:p-8">
                   <h3 class="max-w-3xl font-display text-3xl font-semibold leading-tight md:text-7xl">
@@ -35,7 +36,7 @@
                 </div>
               </div>
 
-              <div class="px-5 pb-7 pt-2 md:px-8 md:pb-9 md:pt-3">
+              <div class="relative -mt-5 px-5 pb-7 pt-2 md:-mt-7 md:px-8 md:pb-9 md:pt-3">
                 <p class="max-w-3xl whitespace-pre-line text-lg leading-8 text-almanac-ink/76 md:text-xl">
                   {{ item.details }}
                 </p>
