@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 
 import { Guest, WeddingContent } from '../../core/invite.models';
+import { InviteTabsComponent } from '../../shared/invite-tabs/invite-tabs.component';
 
 @Component({
   selector: 'app-hero-section',
   standalone: true,
-  imports: [],
+  imports: [InviteTabsComponent],
   templateUrl: './hero-section.component.html',
   styleUrl: './hero-section.component.css'
 })

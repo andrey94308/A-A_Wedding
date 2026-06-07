@@ -1,0 +1,19 @@
+@if (viewModel$ | async; as vm) {
+  @if (vm.isLoading) {
+    <main class="flex min-h-screen items-center justify-center bg-almanac-ink px-5 text-white">
+      <h1 class="font-display text-5xl font-semibold">Открываем дресс-код</h1>
+    </main>
+  } @else if (vm.guest) {
+    <app-invite-page-shell [guest]="vm.guest" [content]="content">
+      <section class="px-5 py-16 md:px-8 md:py-24">
+        <div class="mx-auto flex max-w-6xl flex-col gap-4">
+          <p class="eyebrow">Дресс-код</p>
+          <h1 class="section-title">Скоро добавим</h1>
+          <p class="max-w-2xl text-lg leading-8 text-almanac-ink/70">
+            Мы уточним дресс-код и обновим эту страницу ближе к свадьбе.
+          </p>
+        </div>
+      </section>
+    </app-invite-page-shell>
+  }
+}

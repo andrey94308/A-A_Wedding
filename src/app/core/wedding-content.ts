@@ -6,7 +6,8 @@ export const WEDDING_CONTENT: WeddingContent = {
   dateDisplay: '07.08.2026',
   venueName: 'Almanac Palais Vienna',
   venueAddress: 'Parkring 14-16, 1010 Вена',
-  heroImage: 'assets/almanac/cover.jpeg',
+  heroImage: 'assets/landing.jpg',
+  mainImage: 'assets/main.png',
   program: [
     {
       time: '17:00 - 18:00',

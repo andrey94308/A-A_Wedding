@@ -39,14 +39,14 @@ export class InviteDataService {
     const url = `${this.guestApiUrl}?uuid=${encodeURIComponent(normalizedUuid)}`;
 
     return this.http.get<GuestApiResponse>(url).pipe(
-      map((response) => this.mapGuestResponse(response)),
+      map((response) => this.mapGuestResponse(response, normalizedUuid)),
       catchError(() => of(this.findFallbackGuest(normalizedUuid)))
     );
   }
 
-  private mapGuestResponse(response: GuestApiResponse): Guest | undefined {
+  private mapGuestResponse(response: GuestApiResponse, uuid: string): Guest | undefined {
     if (!response.ok || !response.found || !response.guest) {
-      return undefined;
+      return this.findFallbackGuest(uuid);
     }
 
     return {

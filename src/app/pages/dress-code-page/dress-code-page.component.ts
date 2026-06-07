@@ -3,22 +3,19 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { map, startWith, switchMap } from 'rxjs';
 
-import { WEDDING_CONTENT } from '../../core/wedding-content';
 import { InviteDataService } from '../../core/invite-data.service';
 import { Guest } from '../../core/invite.models';
-import { HeroSectionComponent } from '../../features/hero-section/hero-section.component';
+import { WEDDING_CONTENT } from '../../core/wedding-content';
+import { InvitePageShellComponent } from '../../shared/invite-page-shell/invite-page-shell.component';
 
 @Component({
-  selector: 'app-invite',
+  selector: 'app-dress-code-page',
   standalone: true,
-  imports: [
-    AsyncPipe,
-    HeroSectionComponent,
-  ],
-  templateUrl: './invite.component.html',
-  styleUrl: './invite.component.css'
+  imports: [AsyncPipe, InvitePageShellComponent],
+  templateUrl: './dress-code-page.component.html',
+  styleUrl: './dress-code-page.component.css',
 })
-export class InviteComponent {
+export class DressCodePageComponent {
   private readonly route = inject(ActivatedRoute);
   private readonly inviteData = inject(InviteDataService);
 
@@ -32,5 +29,4 @@ export class InviteComponent {
       )
     )
   );
-
 }

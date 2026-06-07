@@ -22,5 +22,6 @@ export interface WeddingContent {
   venueName: string;
   venueAddress: string;
   heroImage: string;
+  mainImage: string;
   program: ProgramItem[];
 }

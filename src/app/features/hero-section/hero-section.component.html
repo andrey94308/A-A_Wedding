@@ -1,28 +1,35 @@
-<section class="relative flex min-h-[92svh] flex-col justify-end overflow-hidden bg-almanac-ink text-white">
+<section class="min-h-screen overflow-hidden bg-almanac-ink">
+  <img
+    class="h-screen w-full object-cover"
+    [src]="content.heroImage"
+    alt="Приглашение Anna and Andrey"
+  />
+</section>
+
+<section class="relative flex min-h-screen flex-col justify-center overflow-hidden bg-almanac-ink text-white">
   <div class="absolute inset-0">
     <img
       class="h-full w-full object-cover"
-      [src]="content.heroImage"
-      alt="Залы Almanac Palais Vienna"
+      [src]="content.mainImage"
+      alt="Анна и Андрей"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-almanac-ink via-almanac-ink/45 to-almanac-ink/10"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-almanac-ink via-almanac-ink/38 to-almanac-ink/5"></div>
   </div>
 
-  <div class="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-5 py-8 md:px-8 md:py-10">
-    <div class="flex w-full max-w-[21rem] flex-col gap-7 sm:max-w-4xl">
-      <div class="flex flex-col gap-4">
-        <h1 class="max-w-full font-display text-5xl font-semibold leading-none sm:text-6xl md:text-8xl">{{ content.couple }}</h1>
-        <p class="font-display text-4xl font-semibold leading-none text-almanac-champagne sm:text-5xl md:text-6xl">{{ content.dateDisplay }}</p>
-        <p class="text-xl leading-8 text-white/85 md:max-w-2xl md:text-2xl">
+  <div class="relative mx-auto flex w-full max-w-6xl translate-y-6 justify-center px-5 py-8 md:-translate-y-20 md:px-8 md:py-10">
+    <div class="flex w-full max-w-[24rem] flex-col items-center gap-16 sm:max-w-2xl">
+      <div class="flex flex-col items-center gap-5">
+        <p class="text-center text-3xl leading-10 text-almanac-cocoa md:text-4xl md:leading-[3.1rem]">
           {{ greeting }} {{ guest.firstName }}, мы будем очень рады разделить этот день вместе в Вене!
         </p>
       </div>
+      <app-invite-tabs [uuid]="guest.uuid" variant="landing"></app-invite-tabs>
     </div>
   </div>
 
-  <footer class="relative bg-almanac-ink px-5 py-5 md:px-8">
+  <footer class="absolute inset-x-0 bottom-0 bg-almanac-ink px-5 py-5 md:px-8">
     <div class="mx-auto flex max-w-6xl flex-col gap-1">
-      <p class="text-sm font-semibold uppercase tracking-[0.22em] text-white/86 md:text-base">{{ content.venueName }}</p>
+      <p class="text-sm font-semibold uppercase tracking-[0.22em] text-almanac-silver md:text-base">{{ content.venueName }}</p>
     </div>
   </footer>
 </section>

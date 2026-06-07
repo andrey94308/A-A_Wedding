@@ -1,0 +1,10 @@
+<nav
+  [class]="navClass"
+  aria-label="Разделы приглашения"
+>
+  @for (link of links; track link.path) {
+    <a [class]="linkClass" [routerLink]="link.commands">
+      {{ link.label }}
+    </a>
+  }
+</nav>

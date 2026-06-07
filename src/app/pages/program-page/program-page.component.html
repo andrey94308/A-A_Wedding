@@ -1,0 +1,11 @@
+@if (viewModel$ | async; as vm) {
+  @if (vm.isLoading) {
+    <main class="flex min-h-screen items-center justify-center bg-almanac-ink px-5 text-white">
+      <h1 class="font-display text-5xl font-semibold">Открываем программу</h1>
+    </main>
+  } @else if (vm.guest) {
+    <app-invite-page-shell [guest]="vm.guest" [content]="content">
+      <app-program-section [content]="content"></app-program-section>
+    </app-invite-page-shell>
+  }
+}

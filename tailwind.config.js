@@ -12,11 +12,13 @@ module.exports = {
           parchment: '#fff9f0',
           gold: '#b38a45',
           wood: '#5b3524',
+          cocoa: '#6B4E3D',
+          silver: '#EDE3D8',
         },
       },
       fontFamily: {
         display: ['Cormorant Garamond', 'Georgia', 'serif'],
-        body: ['Inter', 'Arial', 'sans-serif'],
+        body: ['Cormorant Garamond', 'Georgia', 'serif'],
       },
       boxShadow: {
         soft: '0 24px 70px rgba(33, 27, 23, 0.14)',
