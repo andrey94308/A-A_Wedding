@@ -49,13 +49,15 @@ export const FALLBACK_GUESTS: Guest[] = [
     uuid: 'demo-anna-andrey',
     firstName: 'Anna',
     lastName: 'Bieliakova',
+    sex: 'f',
     partySize: 2,
     note: 'Демо-приглашение для локальной разработки.',
   },
   {
     uuid: 'demo-guest',
-    firstName: 'Дорогой',
-    lastName: 'гость',
+    firstName: 'гость',
+    lastName: '',
+    sex: 'm',
     partySize: 1,
   },
 ];

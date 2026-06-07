@@ -2,6 +2,7 @@ export interface Guest {
   uuid: string;
   firstName: string;
   lastName: string;
+  sex?: 'f' | 'm';
   email?: string;
   partySize?: number;
   tableName?: string;

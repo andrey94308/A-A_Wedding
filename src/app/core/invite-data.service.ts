@@ -1,18 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { Observable, catchError, map, of, shareReplay } from 'rxjs';
+import { Observable, catchError, map, of } from 'rxjs';
 
 import { Guest } from './invite.models';
-import { GOOGLE_SHEETS_CSV_URL } from './invite-source.config';
+import { GUEST_API_URL } from './invite-source.config';
 import { FALLBACK_GUESTS } from './wedding-content';
+
+interface GuestApiResponse {
+  ok: boolean;
+  found?: boolean;
+  guest?: {
+    uuid: string;
+    name: string;
+    scnd_name: string;
+    sex?: 'f' | 'm';
+    email?: string;
+  };
+  error?: string;
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class InviteDataService {
   private readonly http = inject(HttpClient);
-  private readonly csvUrl = GOOGLE_SHEETS_CSV_URL;
-  private readonly guests$ = this.loadGuests().pipe(shareReplay(1));
+  private readonly guestApiUrl = GUEST_API_URL;
 
   findGuest(uuid: string | null): Observable<Guest | undefined> {
     const normalizedUuid = uuid?.trim();
@@ -21,47 +33,33 @@ export class InviteDataService {
       return of(undefined);
     }
 
-    return this.guests$.pipe(
-      map((guests) => guests.find((guest) => guest.uuid === normalizedUuid))
-    );
-  }
-
-  private loadGuests(): Observable<Guest[]> {
-    if (!this.csvUrl) {
-      return of(FALLBACK_GUESTS);
+    if (!this.guestApiUrl) {
+      return of(this.findFallbackGuest(normalizedUuid));
     }
 
-    return this.http.get(this.csvUrl, { responseType: 'text' }).pipe(
-      map((csv) => this.parseCsv(csv)),
-      catchError(() => of(FALLBACK_GUESTS))
+    const url = `${this.guestApiUrl}?uuid=${encodeURIComponent(normalizedUuid)}`;
+
+    return this.http.get<GuestApiResponse>(url).pipe(
+      map((response) => this.mapGuestResponse(response)),
+      catchError(() => of(this.findFallbackGuest(normalizedUuid)))
     );
   }
 
-  private parseCsv(csv: string): Guest[] {
-    const rows = csv
-      .split(/\r?\n/)
-      .map((row) => row.trim())
-      .filter(Boolean)
-      .map((row) => row.split(',').map((cell) => cell.trim()));
+  private mapGuestResponse(response: GuestApiResponse): Guest | undefined {
+    if (!response.ok || !response.found || !response.guest) {
+      return undefined;
+    }
 
-    const [header = [], ...records] = rows;
-    const keyIndex = new Map(header.map((key, index) => [key, index]));
-
-    return records
-      .map((record) => ({
-        uuid: this.cell(record, keyIndex, 'uuid'),
-        firstName: this.cell(record, keyIndex, 'firstName'),
-        lastName: this.cell(record, keyIndex, 'lastName'),
-        email: this.cell(record, keyIndex, 'email'),
-        partySize: Number(this.cell(record, keyIndex, 'partySize')) || undefined,
-        tableName: this.cell(record, keyIndex, 'tableName'),
-        note: this.cell(record, keyIndex, 'note'),
-      }))
-      .filter((guest) => guest.uuid && guest.firstName);
+    return {
+      uuid: response.guest.uuid,
+      firstName: response.guest.name,
+      lastName: response.guest.scnd_name,
+      sex: response.guest.sex,
+      email: response.guest.email,
+    };
   }
 
-  private cell(record: string[], keyIndex: Map<string, number>, key: string): string {
-    const index = keyIndex.get(key);
-    return index === undefined ? '' : record[index] ?? '';
+  private findFallbackGuest(uuid: string): Guest | undefined {
+    return FALLBACK_GUESTS.find((guest) => guest.uuid === uuid);
   }
 }

@@ -13,4 +13,7 @@ export class HeroSectionComponent {
   @Input({ required: true }) guest!: Guest;
   @Input({ required: true }) content!: WeddingContent;
 
+  get greeting(): string {
+    return this.guest.sex === 'f' ? 'Дорогая' : 'Дорогой';
+  }
 }

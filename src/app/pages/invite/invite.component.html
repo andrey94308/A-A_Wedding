@@ -1,18 +1,27 @@
-@if (guest$ | async; as guest) {
-  <main class="min-h-screen">
-    <app-hero-section [guest]="guest" [content]="content"></app-hero-section>
-    <app-program-section [content]="content"></app-program-section>
-    <app-updates-section [guest]="guest" [content]="content"></app-updates-section>
-    <app-rsvp-section [guest]="guest"></app-rsvp-section>
-  </main>
-} @else {
-  <main class="flex min-h-screen items-center justify-center bg-almanac-ink px-5 text-white">
-    <section class="flex max-w-xl flex-col gap-5 text-center">
-      <p class="eyebrow text-almanac-gold">Приглашение не найдено</p>
-      <h1 class="font-display text-5xl font-semibold">Проверьте ссылку на приглашение</h1>
-      <p class="leading-7 text-white/70">
-        UUID в этой ссылке пока не найден в списке гостей.
-      </p>
-    </section>
-  </main>
+@if (viewModel$ | async; as vm) {
+  @if (vm.isLoading) {
+    <main class="flex min-h-screen items-center justify-center bg-almanac-ink px-5 text-white">
+      <section class="flex max-w-xl flex-col gap-5 text-center">
+        <p class="eyebrow text-almanac-gold">Загрузка</p>
+        <h1 class="font-display text-5xl font-semibold">Открываем приглашение</h1>
+      </section>
+    </main>
+  } @else if (vm.guest) {
+    <main class="min-h-screen">
+      <app-hero-section [guest]="vm.guest" [content]="content"></app-hero-section>
+      <app-program-section [content]="content"></app-program-section>
+      <app-updates-section [guest]="vm.guest" [content]="content"></app-updates-section>
+      <app-rsvp-section [guest]="vm.guest"></app-rsvp-section>
+    </main>
+  } @else {
+    <main class="flex min-h-screen items-center justify-center bg-almanac-ink px-5 text-white">
+      <section class="flex max-w-xl flex-col gap-5 text-center">
+        <p class="eyebrow text-almanac-gold">Приглашение не найдено</p>
+        <h1 class="font-display text-5xl font-semibold">Проверьте ссылку на приглашение</h1>
+        <p class="leading-7 text-white/70">
+          UUID в этой ссылке пока не найден в списке гостей.
+        </p>
+      </section>
+    </main>
+  }
 }

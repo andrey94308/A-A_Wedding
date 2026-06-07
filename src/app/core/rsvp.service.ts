@@ -24,6 +24,17 @@ export class RsvpService {
       return of({ skipped: true, payload });
     }
 
-    return this.http.post(this.scriptUrl, payload);
+    return this.http.post(
+      this.scriptUrl,
+      JSON.stringify({
+        ...payload,
+        uuid: payload.guest.uuid,
+      }),
+      {
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+      }
+    );
   }
 }
