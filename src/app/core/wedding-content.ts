@@ -37,27 +37,18 @@ export const WEDDING_CONTENT: WeddingContent = {
       image: 'assets/program/club.jpeg',
     },
   ],
-  updates: [
-    'План рассадки появится, когда мы финально подтвердим список гостей.',
-    'Дресс-код пока уточняется, мы добавим его позже.',
-    'Оставьте, пожалуйста, e-mail, чтобы мы могли отправить важные обновления.',
-  ],
 };
 
 export const FALLBACK_GUESTS: Guest[] = [
   {
     uuid: 'demo-anna-andrey',
     firstName: 'Anna',
-    lastName: 'Bieliakova',
     sex: 'f',
-    partySize: 2,
     note: 'Демо-приглашение для локальной разработки.',
   },
   {
     uuid: 'demo-guest',
     firstName: 'гость',
-    lastName: '',
     sex: 'm',
-    partySize: 1,
   },
 ];

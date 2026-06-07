@@ -12,7 +12,6 @@ interface GuestApiResponse {
   guest?: {
     uuid: string;
     name: string;
-    scnd_name: string;
     sex?: 'f' | 'm';
     email?: string;
   };
@@ -53,7 +52,6 @@ export class InviteDataService {
     return {
       uuid: response.guest.uuid,
       firstName: response.guest.name,
-      lastName: response.guest.scnd_name,
       sex: response.guest.sex,
       email: response.guest.email,
     };

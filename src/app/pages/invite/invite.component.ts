@@ -8,7 +8,6 @@ import { InviteDataService } from '../../core/invite-data.service';
 import { Guest } from '../../core/invite.models';
 import { HeroSectionComponent } from '../../features/hero-section/hero-section.component';
 import { ProgramSectionComponent } from '../../features/program-section/program-section.component';
-import { RsvpSectionComponent } from '../../features/rsvp-section/rsvp-section.component';
 import { UpdatesSectionComponent } from '../../features/updates-section/updates-section.component';
 
 @Component({
@@ -19,7 +18,6 @@ import { UpdatesSectionComponent } from '../../features/updates-section/updates-
     HeroSectionComponent,
     ProgramSectionComponent,
     UpdatesSectionComponent,
-    RsvpSectionComponent,
   ],
   templateUrl: './invite.component.html',
   styleUrl: './invite.component.css'

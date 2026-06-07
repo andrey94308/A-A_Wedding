@@ -1,10 +1,8 @@
 export interface Guest {
   uuid: string;
   firstName: string;
-  lastName: string;
   sex?: 'f' | 'm';
   email?: string;
-  partySize?: number;
   tableName?: string;
   note?: string;
 }
@@ -25,5 +23,4 @@ export interface WeddingContent {
   venueAddress: string;
   heroImage: string;
   program: ProgramItem[];
-  updates: string[];
 }

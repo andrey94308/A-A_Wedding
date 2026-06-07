@@ -1,20 +1,60 @@
 <app-section-shell
   eyebrow="Обновления"
   title="Детали появятся позже"
-  intro="Мы будем обновлять эту страницу, когда финальные детали будут готовы."
+  intro="Мы будем обновлять эту страницу, когда финальные детали будут готовы. Мы очень просим оставить свой e-mail, чтобы мы могли отправить изменения по рассадке, дресс-коду и времени."
 >
-  <div class="grid gap-4 md:grid-cols-3">
-    @for (update of content.updates; track update) {
-      <article class="glass-panel flex min-h-40 flex-col justify-between gap-5 rounded-lg p-6">
-        <p class="leading-7 text-almanac-ink/74">{{ update }}</p>
-      </article>
-    }
+  <div class="max-w-2xl">
+    @if (!isEditing && savedEmail) {
+      <div class="glass-panel flex flex-col gap-5 rounded-lg p-6 md:flex-row md:items-center md:justify-between">
+        <div class="flex flex-col gap-2">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-almanac-gold">Ваш e-mail сохранен</p>
+          <p class="text-xl font-semibold text-almanac-ink">{{ savedEmail }}</p>
+        </div>
 
-    @if (guest.tableName) {
-      <article class="rounded-lg bg-almanac-ink p-6 text-white">
-        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-almanac-gold">Стол</p>
-        <p class="pt-4 font-display text-4xl">{{ guest.tableName }}</p>
-      </article>
+        <button
+          class="focus-ring border border-almanac-ink/20 px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-almanac-ink"
+          type="button"
+          (click)="edit()"
+        >
+          Изменить
+        </button>
+      </div>
+    } @else {
+      <form class="glass-panel flex flex-col gap-4 rounded-lg p-6" [formGroup]="form" (ngSubmit)="submit()">
+        <label class="flex flex-col gap-2">
+          <span class="text-sm font-semibold">E-mail</span>
+          <input
+            [class]="emailError
+              ? 'focus-ring rounded-md border border-almanac-plum bg-white px-4 py-3'
+              : 'focus-ring rounded-md border border-almanac-ink/15 bg-white px-4 py-3'"
+            [attr.aria-invalid]="!!emailError"
+            aria-describedby="email-error"
+            type="email"
+            autocomplete="email"
+            formControlName="email"
+            placeholder="name&#64;example.com"
+          />
+          @if (emailError) {
+            <p id="email-error" class="rounded-md bg-almanac-plum px-3 py-2 text-sm font-medium text-white" role="alert">
+              {{ emailError }}
+            </p>
+          }
+        </label>
+
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <button
+            class="focus-ring bg-almanac-ink px-5 py-3 text-sm font-semibold uppercase tracking-[0.16em] text-white disabled:opacity-60"
+            type="submit"
+            [disabled]="isSubmitting"
+          >
+            {{ isSubmitting ? 'Сохраняем...' : 'Сохранить e-mail' }}
+          </button>
+
+          @if (submitState === 'error') {
+            <p class="text-sm text-almanac-plum">Не удалось сохранить. Попробуйте позже.</p>
+          }
+        </div>
+      </form>
     }
   </div>
 </app-section-shell>

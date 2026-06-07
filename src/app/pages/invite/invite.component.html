@@ -10,8 +10,7 @@
     <main class="min-h-screen">
       <app-hero-section [guest]="vm.guest" [content]="content"></app-hero-section>
       <app-program-section [content]="content"></app-program-section>
-      <app-updates-section [guest]="vm.guest" [content]="content"></app-updates-section>
-      <app-rsvp-section [guest]="vm.guest"></app-rsvp-section>
+      <app-updates-section [guest]="vm.guest"></app-updates-section>
     </main>
   } @else {
     <main class="flex min-h-screen items-center justify-center bg-almanac-ink px-5 text-white">
