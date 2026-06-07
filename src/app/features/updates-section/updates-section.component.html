@@ -1,0 +1,20 @@
+<app-section-shell
+  eyebrow="Updates"
+  title="Details to follow"
+  intro="We will keep this page updated as the final details become available."
+>
+  <div class="grid gap-4 md:grid-cols-3">
+    @for (update of content.updates; track update) {
+      <article class="glass-panel flex min-h-40 flex-col justify-between gap-5 rounded-lg p-6">
+        <p class="leading-7 text-almanac-ink/74">{{ update }}</p>
+      </article>
+    }
+
+    @if (guest.tableName) {
+      <article class="rounded-lg bg-almanac-ink p-6 text-white">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-almanac-gold">Table</p>
+        <p class="pt-4 font-display text-4xl">{{ guest.tableName }}</p>
+      </article>
+    }
+  </div>
+</app-section-shell>

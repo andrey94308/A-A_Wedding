@@ -1,0 +1,18 @@
+<app-section-shell
+  eyebrow="Menu 1"
+  title="Dinner"
+  intro="This is the selected menu. Menu 2 from the documents is intentionally not included."
+>
+  <div class="grid overflow-hidden rounded-lg bg-almanac-plum text-white shadow-soft lg:grid-cols-[0.95fr_1.05fr]">
+    <img class="h-full min-h-[28rem] w-full object-cover" src="assets/almanac/nepliget.jpg" alt="Nepliget Park dining room" />
+    <div class="flex flex-col gap-6 p-6 md:p-10">
+      @for (course of content.menu; track course.label) {
+        <article class="flex flex-col gap-2 border-b border-white/18 pb-5 last:border-b-0 last:pb-0">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-almanac-champagne">{{ course.label }}</p>
+          <h3 class="font-display text-3xl font-semibold">{{ course.title }}</h3>
+          <p class="leading-7 text-white/76">{{ course.details }}</p>
+        </article>
+      }
+    </div>
+  </div>
+</app-section-shell>

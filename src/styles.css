@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-almanac-parchment font-body text-almanac-ink antialiased;
+  }
+
+  button,
+  input,
+  textarea {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.24em] text-almanac-gold;
+  }
+
+  .section-title {
+    @apply font-display text-4xl font-semibold leading-tight text-almanac-ink md:text-6xl;
+  }
+
+  .glass-panel {
+    @apply border border-white/40 bg-white/75 shadow-soft backdrop-blur;
+  }
+
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-almanac-gold focus:ring-offset-2 focus:ring-offset-almanac-parchment;
+  }
+}

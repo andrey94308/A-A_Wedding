@@ -1,0 +1,18 @@
+<app-section-shell
+  eyebrow="Location"
+  [title]="content.venueName"
+  [intro]="content.venueAddress"
+>
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
+    @for (room of content.rooms; track room.name) {
+      <article class="group flex min-h-[22rem] flex-col justify-end overflow-hidden rounded-lg bg-almanac-ink text-white shadow-soft">
+        <img class="h-64 w-full object-cover transition duration-500 group-hover:scale-105" [src]="room.image" [alt]="room.name" />
+        <div class="flex min-h-44 flex-col gap-3 bg-almanac-ink p-5">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-almanac-gold">{{ room.role }}</p>
+          <h3 class="font-display text-3xl font-semibold">{{ room.name }}</h3>
+          <p class="text-sm leading-6 text-white/72">{{ room.description }}</p>
+        </div>
+      </article>
+    }
+  </div>
+</app-section-shell>

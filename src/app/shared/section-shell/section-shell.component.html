@@ -1,0 +1,13 @@
+<section class="px-5 py-16 md:px-8 md:py-24">
+  <div class="mx-auto flex max-w-6xl flex-col gap-10">
+    <header class="flex max-w-3xl flex-col gap-4">
+      <p class="eyebrow">{{ eyebrow }}</p>
+      <h2 class="section-title">{{ title }}</h2>
+      @if (intro) {
+        <p class="text-base leading-7 text-almanac-ink/70 md:text-lg">{{ intro }}</p>
+      }
+    </header>
+
+    <ng-content></ng-content>
+  </div>
+</section>
