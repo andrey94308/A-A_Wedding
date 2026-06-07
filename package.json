@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh-pages": "ng build --configuration production --base-href /A-A_Wedding/ && cp dist/wedding-invite/browser/index.html dist/wedding-invite/browser/404.html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },

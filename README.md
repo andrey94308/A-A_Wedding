@@ -28,6 +28,17 @@ For writing RSVP/email updates, create a Google Apps Script web app that accepts
 `POST` JSON and paste its URL into `RSVP_SCRIPT_URL`. Keeping writes behind Apps
 Script avoids exposing Google API credentials in the browser.
 
+## GitHub Pages build
+
+Use:
+
+```bash
+npm run build:gh-pages
+```
+
+This builds with `/A-A_Wedding/` as the base href and creates `404.html` for
+direct links like `/invite/{uuid}` on GitHub Pages.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
 
 ## Development server
