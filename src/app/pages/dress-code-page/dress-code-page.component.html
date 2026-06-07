@@ -8,24 +8,14 @@
     </main>
   } @else if (vm.guest) {
     <app-invite-page-shell [guest]="vm.guest" [content]="content">
-      <section class="px-5 py-14 text-center md:px-8 md:py-20">
+      <section class="bg-almanac-ink/95 px-5 py-7 text-center text-white md:px-8 md:py-20">
         <div class="mx-auto flex max-w-5xl flex-col items-center gap-10">
           <header class="flex max-w-3xl flex-col items-center gap-6">
-            <h1 class="font-display text-5xl font-semibold leading-tight text-almanac-ink md:text-7xl">
-              Дресс - Код
-            </h1>
-
-            <div class="flex w-full max-w-xs items-center gap-4 text-almanac-gold" aria-hidden="true">
-              <span class="h-px flex-1 bg-current"></span>
-              <span class="h-2 w-2 rounded-full bg-current"></span>
-              <span class="h-px flex-1 bg-current"></span>
-            </div>
-
             <div class="flex flex-col items-center gap-5">
-              <h2 class="font-display text-3xl font-semibold text-almanac-plum md:text-4xl">
+              <h2 class="font-display text-3xl font-semibold text-almanac-champagne md:text-4xl">
                 Темные оттенки
               </h2>
-              <div class="flex max-w-2xl flex-col gap-4 text-lg leading-8 text-almanac-ink/72 md:text-xl md:leading-9">
+              <div class="flex max-w-2xl flex-col gap-4 text-lg leading-8 text-white/76 md:text-xl md:leading-9">
                 <p>
                   Нам будет особенно приятно, если в своих образах вы поддержите атмосферу вечера, выбрав наряды в тёмных оттенках.
                 </p>
@@ -38,22 +28,22 @@
 
           <div class="grid w-full gap-10 md:grid-cols-2 md:gap-8">
             <section class="flex flex-col items-center gap-5">
-              <h2 class="font-display text-3xl font-semibold text-almanac-ink md:text-4xl">
+              <h2 class="font-display text-3xl font-semibold text-almanac-silver md:text-4xl">
                 Для девушек
               </h2>
               <img
-                class="w-full max-w-md rounded-lg border border-almanac-ink/10 object-cover shadow-soft"
+                class="w-full max-w-md rounded-lg object-cover shadow-soft"
                 src="assets/dresscode-women.PNG"
                 alt="Референсы дресс-кода для девушек"
               />
             </section>
 
             <section class="flex flex-col items-center gap-5">
-              <h2 class="font-display text-3xl font-semibold text-almanac-ink md:text-4xl">
+              <h2 class="font-display text-3xl font-semibold text-almanac-silver md:text-4xl">
                 Для мужчин
               </h2>
               <img
-                class="w-full max-w-md rounded-lg border border-almanac-ink/10 object-cover shadow-soft"
+                class="w-full max-w-md rounded-lg object-cover shadow-soft"
                 src="assets/dresscode-men.PNG"
                 alt="Референсы дресс-кода для мужчин"
               />
