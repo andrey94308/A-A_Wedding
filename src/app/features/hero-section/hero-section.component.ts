@@ -18,7 +18,7 @@ export class HeroSectionComponent {
     return this.guest.sex === 'f' ? 'Дорогая' : 'Дорогой';
   }
 
-  get togetherAddress(): string {
-    return this.guest.official ? 'Вами' : 'тобой';
+  get inviteAddress(): string {
+    return this.guest.official ? 'Вас' : 'тебя';
   }
 }
