@@ -50,6 +50,7 @@ export const FALLBACK_GUESTS: Guest[] = [
     firstName: 'Anna',
     sex: 'f',
     official: false,
+    lang: 'ru',
     note: 'Демо-приглашение для локальной разработки.',
   },
   {
@@ -57,5 +58,6 @@ export const FALLBACK_GUESTS: Guest[] = [
     firstName: 'гость',
     sex: 'm',
     official: false,
+    lang: 'ru',
   },
 ];

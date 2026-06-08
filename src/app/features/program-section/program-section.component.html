@@ -1,6 +1,6 @@
 <div id="program">
   <app-section-shell
-    eyebrow="Программа"
+    [eyebrow]="programEyebrow"
   >
     <div class="flex flex-col gap-4">
       <article class="rounded-lg bg-almanac-parchment px-5 py-6 shadow-soft md:px-7 md:py-8">
@@ -8,7 +8,7 @@
           <p>{{ greeting }} {{ guest.firstName }},</p>
           <p>{{ prologueProgramText }}</p>
           <p>
-            А чтобы друзья познакомились с родственниками, родственники - с друзьями, а неловкое молчание между тостами не успело стать слишком неловким, на протяжении всего вечера рядом с нами будет ведущий.
+            {{ prologueHostText }}
           </p>
           <p>
             {{ allergyText }}
@@ -27,7 +27,7 @@
             <div class="flex items-center justify-between">
               <span class="flex flex-col">
                 @if(!isExpanded(index)) {
-                  <span class="text-2xl font-semibold">{{ item.title }}</span>
+                  <span class="text-2xl font-semibold">{{ programTitle(index) }}</span>
                 }
                 <time class="text-almanac-ink/85 font-[system-ui]" [class.text-2xl]="isExpanded(index)" [class.text-xl]="!isExpanded(index)">{{ item.time }}</time>
               </span>
@@ -54,14 +54,14 @@
           @if (isExpanded(index)) {
             <div class="overflow-hidden bg-almanac-parchment">
               <div class="relative aspect-[4/3] overflow-hidden md:aspect-[3/2]">
-                <img class="absolute inset-0 h-full w-full object-cover" [src]="item.image" [alt]="item.title" />
+                <img class="absolute inset-0 h-full w-full object-cover" [src]="item.image" [alt]="programTitle(index)" />
                 <div class="absolute inset-0 bg-gradient-to-t from-almanac-ink/72 via-almanac-ink/18 to-transparent"></div>
                 <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-almanac-parchment/45 via-60% to-almanac-parchment"></div>
                 <div class="absolute inset-x-0 bottom-0 h-24 bg-almanac-parchment/18 backdrop-blur-[2px] [mask-image:linear-gradient(to_bottom,transparent,black_35%,transparent)]"></div>
 
                 <div class="relative flex h-full items-end p-5 text-almanac-ink/70 md:p-8">
                   <h3 class="max-w-3xl font-display text-3xl font-semibold leading-tight md:text-7xl">
-                    {{ item.title }}
+                    {{ programTitle(index) }}
                   </h3>
                 </div>
               </div>
@@ -79,16 +79,16 @@
       <article class="rounded-lg bg-almanac-parchment px-5 py-6 shadow-soft md:px-7 md:py-8">
         <div class="mx-auto flex max-w-3xl flex-col gap-4 text-start text-lg leading-8 text-almanac-ink/76 md:text-xl md:leading-9">
           <p>
-            За красивыми залами, цветами, свечами и всей свадебной суетой скрывается довольно простая идея - собрать в одном месте людей, которых мы любим и вместе прожить все эмоции этого дня.
+            {{ epilogueText }}
           </p>
-          <p>Ждём встречи!</p>
+          <p>{{ seeYouText }}</p>
           <p>
-            Ну а пока предлагаем заглянуть в
+            {{ dressCodePromptText }}
             <a
               class="focus-ring border-b border-almanac-gold text-almanac-ink transition hover:text-almanac-gold"
               [routerLink]="['/invite', guest.uuid, 'dress-code']"
             >
-              раздел с дресс-кодом
+              {{ dressCodeLinkText }}
             </a>
           </p>
           <p class="font-display text-2xl font-semibold text-almanac-ink md:text-3xl">Anna & Andrey</p>

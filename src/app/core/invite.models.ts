@@ -3,6 +3,7 @@ export interface Guest {
   firstName: string;
   sex?: 'f' | 'm';
   official?: boolean;
+  lang?: 'ru' | 'en';
   email?: string;
   tableName?: string;
   note?: string;

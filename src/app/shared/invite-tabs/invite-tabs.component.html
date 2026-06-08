@@ -1,6 +1,6 @@
 <nav
   [class]="navClass"
-  aria-label="Разделы приглашения"
+  [attr.aria-label]="lang === 'en' ? 'Invitation sections' : 'Разделы приглашения'"
 >
   @for (link of links; track link.path) {
     <a [class]="linkClass" [routerLink]="link.commands">

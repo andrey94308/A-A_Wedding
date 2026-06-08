@@ -10,6 +10,7 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class InviteTabsComponent {
   @Input({ required: true }) uuid!: string;
+  @Input() lang: 'ru' | 'en' = 'ru';
   @Input() variant: 'dark' | 'light' | 'landing' = 'dark';
 
   private readonly router = inject(Router);
@@ -17,17 +18,17 @@ export class InviteTabsComponent {
   get links(): Array<{ label: string; commands: string[]; path: string }> {
     const allLinks = [
       {
-        label: 'Главная',
+        label: this.lang === 'en' ? 'Home' : 'Главная',
         commands: ['/invite', this.uuid],
         path: `/invite/${this.uuid}`,
       },
       {
-        label: 'Программа',
+        label: this.lang === 'en' ? 'Program' : 'Программа',
         commands: ['/invite', this.uuid, 'program'],
         path: `/invite/${this.uuid}/program`,
       },
       {
-        label: 'Дресс-код',
+        label: this.lang === 'en' ? 'Dress code' : 'Дресс-код',
         commands: ['/invite', this.uuid, 'dress-code'],
         path: `/invite/${this.uuid}/dress-code`,
       },

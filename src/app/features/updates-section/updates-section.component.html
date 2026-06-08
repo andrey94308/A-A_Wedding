@@ -1,6 +1,6 @@
 <app-section-shell
-  eyebrow="Обновления"
-  title="Детали появятся позже"
+  [eyebrow]="eyebrowText"
+  [title]="titleText"
   [intro]="introText"
 >
   <div class="max-w-2xl">
@@ -16,7 +16,7 @@
           type="button"
           (click)="edit()"
         >
-          Изменить
+          {{ editText }}
         </button>
       </div>
     } @else {
@@ -47,7 +47,7 @@
             type="submit"
             [disabled]="isSubmitting"
           >
-            {{ isSubmitting ? 'Сохраняем...' : 'Сохранить e-mail' }}
+            {{ submitButtonText }}
           </button>
 
           @if (submitState === 'error') {

@@ -14,6 +14,7 @@ interface GuestApiResponse {
     name: string;
     sex?: 'f' | 'm';
     official?: boolean | number | string;
+    lang?: string;
     email?: string;
   };
   error?: string;
@@ -55,12 +56,17 @@ export class InviteDataService {
       firstName: response.guest.name,
       sex: response.guest.sex,
       official: this.normalizeOfficial(response.guest.official),
+      lang: this.normalizeLang(response.guest.lang),
       email: response.guest.email,
     };
   }
 
   private normalizeOfficial(value: boolean | number | string | undefined): boolean {
     return value === true || value === 1 || value === '1';
+  }
+
+  private normalizeLang(value: string | undefined): 'ru' | 'en' {
+    return value?.trim().toLowerCase() === 'en' ? 'en' : 'ru';
   }
 
   private findFallbackGuest(uuid: string): Guest | undefined {

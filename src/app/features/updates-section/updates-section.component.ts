@@ -29,17 +29,61 @@ export class UpdatesSectionComponent implements OnChanges {
   });
 
   get introText(): string {
+    if (this.isEnglish) {
+      return 'We will update this page when the final details are ready. Please leave your e-mail so we can send any updates about seating, dress code, and timing.';
+    }
+
     return this.guest.official
       ? 'Мы будем обновлять эту страницу, когда финальные детали будут готовы. Мы очень просим Вас оставить свой e-mail, чтобы мы могли отправить изменения по рассадке, дресс-коду и времени.'
       : 'Мы будем обновлять эту страницу, когда финальные детали будут готовы. Мы очень просим тебя оставить свой e-mail, чтобы мы могли отправить изменения по рассадке, дресс-коду и времени.';
   }
 
   get savedEmailLabel(): string {
+    if (this.isEnglish) {
+      return 'Your e-mail is saved';
+    }
+
     return this.guest.official ? 'Ваш e-mail сохранен' : 'Твой e-mail сохранен';
   }
 
   get submitErrorText(): string {
+    if (this.isEnglish) {
+      return 'Could not save. Please try again later.';
+    }
+
     return this.guest.official ? 'Не удалось сохранить. Попробуйте позже.' : 'Не удалось сохранить. Попробуй позже.';
+  }
+
+  get eyebrowText(): string {
+    return this.isEnglish ? 'Updates' : 'Обновления';
+  }
+
+  get titleText(): string {
+    return this.isEnglish ? 'Details coming later' : 'Детали появятся позже';
+  }
+
+  get editText(): string {
+    return this.isEnglish ? 'Edit' : 'Изменить';
+  }
+
+  get requiredEmailText(): string {
+    return this.isEnglish ? 'Enter your e-mail.' : 'Введите e-mail.';
+  }
+
+  get invalidEmailText(): string {
+    return this.isEnglish ? 'Invalid e-mail format.' : 'Некорректный формат e-mail.';
+  }
+
+  get submitButtonText(): string {
+    if (this.isSubmitting) {
+      return this.isEnglish ? 'Saving...' : 'Сохраняем...';
+    }
+
+    return this.isEnglish ? 'Save e-mail' : 'Сохранить e-mail';
+  }
+
+  get isEnglish(): boolean {
+    return this.guest.lang === 'en';
   }
 
   get emailError(): string {
@@ -50,10 +94,10 @@ export class UpdatesSectionComponent implements OnChanges {
     }
 
     if (control.hasError('required')) {
-      return 'Введите e-mail.';
+      return this.requiredEmailText;
     }
 
-    return 'Некорректный формат e-mail.';
+    return this.invalidEmailText;
   }
 
   ngOnChanges(): void {

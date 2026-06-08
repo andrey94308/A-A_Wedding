@@ -12,16 +12,16 @@
         <div class="mx-auto flex max-w-5xl flex-col items-center gap-10">
           <header class="flex max-w-3xl flex-col items-center gap-6">
             <div class="flex flex-col items-center gap-5">
-              <p class="eyebrow text-almanac-gold">Дресс-код</p>
+              <p class="eyebrow text-almanac-gold">{{ isEnglish(vm.guest) ? 'Dress code' : 'Дресс-код' }}</p>
               <h2 class="font-display text-3xl font-semibold text-almanac-champagne md:text-4xl">
-                Темные оттенки
+                {{ isEnglish(vm.guest) ? 'Dark shades' : 'Темные оттенки' }}
               </h2>
               <div class="flex max-w-2xl flex-col gap-4 text-lg leading-8 text-white/76 md:text-xl md:leading-9">
                 <p>
                   {{ dressCodeIntro(vm.guest) }}
                 </p>
                 <p>
-                  Чёрный, графитовый, шоколадный, тёмно-синий, бордовый и другие глубокие цвета будут прекрасно смотреться.
+                  {{ isEnglish(vm.guest) ? 'Black, graphite, chocolate, dark blue, burgundy, and other deep colors will look beautiful.' : 'Чёрный, графитовый, шоколадный, тёмно-синий, бордовый и другие глубокие цвета будут прекрасно смотреться.' }}
                 </p>
               </div>
             </div>
@@ -30,23 +30,23 @@
           <div class="grid w-full gap-10 md:grid-cols-2 md:gap-8">
             <section class="flex flex-col items-center gap-5">
               <h2 class="font-display text-3xl font-semibold text-almanac-silver md:text-4xl">
-                Для девушек
+                {{ isEnglish(vm.guest) ? 'For women' : 'Для девушек' }}
               </h2>
               <img
                 class="w-full max-w-md rounded-lg object-cover shadow-soft"
                 src="assets/dresscode-women.PNG"
-                alt="Референсы дресс-кода для девушек"
+                [alt]="isEnglish(vm.guest) ? 'Dress code references for women' : 'Референсы дресс-кода для девушек'"
               />
             </section>
 
             <section class="flex flex-col items-center gap-5">
               <h2 class="font-display text-3xl font-semibold text-almanac-silver md:text-4xl">
-                Для мужчин
+                {{ isEnglish(vm.guest) ? 'For men' : 'Для мужчин' }}
               </h2>
               <img
                 class="w-full max-w-md rounded-lg object-cover shadow-soft"
                 src="assets/dresscode-men.PNG"
-                alt="Референсы дресс-кода для мужчин"
+                [alt]="isEnglish(vm.guest) ? 'Dress code references for men' : 'Референсы дресс-кода для мужчин'"
               />
             </section>
           </div>

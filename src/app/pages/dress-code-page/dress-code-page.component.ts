@@ -31,8 +31,16 @@ export class DressCodePageComponent {
   );
 
   dressCodeIntro(guest: Guest): string {
+    if (this.isEnglish(guest)) {
+      return 'It would mean a lot to us if your outfit supports the atmosphere of the evening by choosing darker shades.';
+    }
+
     return guest.official
       ? 'Нам будет особенно приятно, если в своём образе Вы поддержите атмосферу вечера, выбрав наряд в тёмных оттенках.'
       : 'Нам будет особенно приятно, если в своём образе ты поддержишь атмосферу вечера, выбрав наряд в тёмных оттенках.';
+  }
+
+  isEnglish(guest: Guest): boolean {
+    return guest.lang === 'en';
   }
 }
