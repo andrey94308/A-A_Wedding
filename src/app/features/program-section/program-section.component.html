@@ -26,13 +26,13 @@
             [attr.aria-expanded]="expandedIndex === index"
             (click)="toggle(index)"
           >
-            <time class="text-2xl text-almanac-ink/85 font-[system-ui]">{{ item.time }}</time>
             <span class="flex flex-col">
               @if(expandedIndex !== index) {
-                <span class="text-xl font-semibold">{{ item.title }}</span>
+                <span class="text-2xl font-semibold">{{ item.title }}</span>
               }
               <span class="text-xs leading-4 text-almanac-ink/62">{{ expandedIndex === index ? 'Свернуть детали' : 'Нажмите, чтобы раскрыть детали' }}</span>
             </span>
+            <time class="text-almanac-ink/85 font-[system-ui]" [class.text-2xl]="expandedIndex === index" [class.text-xl]="expandedIndex !== index">{{ item.time }}</time>
           </button>
 
           @if (expandedIndex === index) {
