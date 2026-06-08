@@ -21,15 +21,15 @@
           <button
             class="focus-ring grid w-full px-5 py-5 text-left md:grid-cols-[10rem_1fr_11rem] md:items-center md:px-7"
             type="button"
-            [attr.aria-expanded]="expandedIndex === index"
+            [attr.aria-expanded]="isExpanded(index)"
             (click)="toggle(index)"
           >
             <div class="flex items-center justify-between">
               <span class="flex flex-col">
-                @if(expandedIndex !== index) {
+                @if(!isExpanded(index)) {
                   <span class="text-2xl font-semibold">{{ item.title }}</span>
                 }
-                <time class="text-almanac-ink/85 font-[system-ui]" [class.text-2xl]="expandedIndex === index" [class.text-xl]="expandedIndex !== index">{{ item.time }}</time>
+                <time class="text-almanac-ink/85 font-[system-ui]" [class.text-2xl]="isExpanded(index)" [class.text-xl]="!isExpanded(index)">{{ item.time }}</time>
               </span>
               <span class="mt-2 inline-flex h-7 w-7 items-center justify-center text-almanac-gold" aria-hidden="true">
                   <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
@@ -51,7 +51,7 @@
             </div>
           </button>
 
-          @if (expandedIndex === index) {
+          @if (isExpanded(index)) {
             <div class="overflow-hidden bg-almanac-parchment">
               <div class="relative aspect-[4/3] overflow-hidden md:aspect-[3/2]">
                 <img class="absolute inset-0 h-full w-full object-cover" [src]="item.image" [alt]="item.title" />

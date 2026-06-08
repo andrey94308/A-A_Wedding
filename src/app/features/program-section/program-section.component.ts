@@ -14,7 +14,7 @@ export class ProgramSectionComponent {
   @Input({ required: true }) guest!: Guest;
   @Input({ required: true }) content!: WeddingContent;
 
-  expandedIndex = -1;
+  expandedIndexes = new Set<number>();
 
   get greeting(): string {
     return this.guest.sex === 'f' ? 'Дорогая' : 'Дорогой';
@@ -62,6 +62,15 @@ export class ProgramSectionComponent {
   }
 
   toggle(index: number): void {
-    this.expandedIndex = this.expandedIndex === index ? -1 : index;
+    if (this.expandedIndexes.has(index)) {
+      this.expandedIndexes.delete(index);
+      return;
+    }
+
+    this.expandedIndexes.add(index);
+  }
+
+  isExpanded(index: number): boolean {
+    return this.expandedIndexes.has(index);
   }
 }
