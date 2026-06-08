@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { Guest, WeddingContent } from '../../core/invite.models';
 import { SectionShellComponent } from '../../shared/section-shell/section-shell.component';
@@ -6,7 +7,7 @@ import { SectionShellComponent } from '../../shared/section-shell/section-shell.
 @Component({
   selector: 'app-program-section',
   standalone: true,
-  imports: [SectionShellComponent],
+  imports: [RouterLink, SectionShellComponent],
   templateUrl: './program-section.component.html',
   styleUrl: './program-section.component.css'
 })
