@@ -30,7 +30,7 @@ export class UpdatesSectionComponent implements OnChanges {
 
   get introText(): string {
     if (this.isEnglish) {
-      return 'We will update this page when the final details are ready. Please leave your e-mail so we can send any updates about seating, dress code, and timing.';
+      return 'We will keep this page updated as the final details come together. Please leave your e-mail so we can send any updates about seating, dress code, and timing.';
     }
 
     return this.guest.official
@@ -59,7 +59,7 @@ export class UpdatesSectionComponent implements OnChanges {
   }
 
   get titleText(): string {
-    return this.isEnglish ? 'Details coming later' : 'Детали появятся позже';
+    return this.isEnglish ? 'More details coming soon' : 'Детали появятся позже';
   }
 
   get editText(): string {

@@ -32,7 +32,7 @@ export class DressCodePageComponent {
 
   dressCodeIntro(guest: Guest): string {
     if (this.isEnglish(guest)) {
-      return 'It would mean a lot to us if your outfit supports the atmosphere of the evening by choosing darker shades.';
+      return 'We would be especially happy if your outfit helped set the mood for the evening, with a look in darker shades.';
     }
 
     return guest.official

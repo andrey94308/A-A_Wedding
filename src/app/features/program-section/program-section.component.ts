@@ -47,7 +47,7 @@ export class ProgramSectionComponent {
 
   get prologueProgramText(): string {
     if (this.isEnglish) {
-      return 'below you will find the program of the evening and get a sense of what our wedding will look like. We tried to make everything as convenient as possible: the whole celebration will take place in Vienna, at Palais Hotel Almanac.';
+      return 'we have put together the evening program below so you can get a glimpse of what our wedding day will look like. We have tried to make everything as easy and comfortable as possible: the whole celebration will take place in Vienna, at Palais Hotel Almanac.';
     }
 
     return this.isOfficial
@@ -57,13 +57,13 @@ export class ProgramSectionComponent {
 
   get prologueHostText(): string {
     return this.isEnglish
-      ? 'And to help friends meet relatives, relatives meet friends, and awkward silence between toasts not become too awkward, a host will be with us throughout the evening.'
+      ? 'To help friends meet family, family meet friends, and any silence between toasts stay charming rather than awkward, a host will be with us throughout the evening.'
       : 'А чтобы друзья познакомились с родственниками, родственники - с друзьями, а неловкое молчание между тостами не успело стать слишком неловким, на протяжении всего вечера рядом с нами будет ведущий.';
   }
 
   get allergyText(): string {
     if (this.isEnglish) {
-      return 'P.S. If you have any allergies to food or flowers, please let us know in advance. We would really like our dance skills to be the only surprise of the evening.';
+      return 'P.S. If you have any allergies to food or flowers, please let us know in advance. We would very much like our dance skills to be the only surprise of the evening.';
     }
 
     return this.isOfficial
@@ -73,12 +73,12 @@ export class ProgramSectionComponent {
 
   get epilogueText(): string {
     return this.isEnglish
-      ? 'Behind the beautiful halls, flowers, candles, and all the wedding bustle is a very simple idea: to gather the people we love in one place and live through all the emotions of this day together.'
+      ? 'Behind the beautiful halls, flowers, candles, and all the wedding bustle, there is a very simple idea: to gather the people we love in one place and share every emotion of this day together.'
       : 'За красивыми залами, цветами, свечами и всей свадебной суетой скрывается довольно простая идея - собрать в одном месте людей, которых мы любим и вместе прожить все эмоции этого дня.';
   }
 
   get seeYouText(): string {
-    return this.isEnglish ? 'See you soon!' : 'Ждём встречи!';
+    return this.isEnglish ? 'We cannot wait to see you!' : 'Ждём встречи!';
   }
 
   get dressCodeLinkText(): string {
@@ -86,7 +86,7 @@ export class ProgramSectionComponent {
   }
 
   get dressCodePromptText(): string {
-    return this.isEnglish ? 'In the meantime, we suggest taking a look at the' : 'Ну а пока предлагаем заглянуть в';
+    return this.isEnglish ? 'In the meantime, take a look at the' : 'Ну а пока предлагаем заглянуть в';
   }
 
   programTitle(index: number): string {
@@ -95,20 +95,20 @@ export class ProgramSectionComponent {
     }
 
     return [
-      'Pouring the prosecco',
+      'Let the prosecco flow',
       'The ceremony',
-      'Please take your seats',
-      'Still early, we continue',
+      'Dinner is served',
+      'The night is still young',
     ][index] ?? this.content.program[index]?.title ?? '';
   }
 
   programDetails(index: number): string {
     if (this.isEnglish) {
       const englishDetails = [
-        'It just so happens that our close friends and relatives live in different cities and even different countries. Many of them have known each other for a long time, while some will meet for the first time that evening.\n\nSo before the ceremony, we suggest lowering the level of nerves a little, raising the level of prosecco, and getting to know each other.\n\nCome at the beginning - the celebration will already be in full swing. There will be time to hug, chat, and figure out who is connected to whom.',
-        'At exactly 18:00, the most emotional moment of our day will begin.\nAnd it is very important to us that you are there with us.',
-        'Once the most emotional moments are behind us, we will gather around the festive table.\n\nA delicious dinner, conversations, toasts, laughter, and of course, games and activities are waiting for us.\n\nShare stories and our funny little mishaps. These are exactly the memories we gathered everyone around one table for.',
-        'If it feels like the evening has flown by too quickly, that means everything is going according to plan.\nCocktails, music, and dancing late into the night are still ahead.\n\nWe modestly decided not to test the patience of the Austrians with our musical taste, so we booked the entire club!\n\nSo once night falls and the quiet hours begin, we will simply go a few floors down and continue the evening.',
+        'As it happens, our closest friends and family live in different cities and even different countries. Many of them have known each other for years, while some will be meeting for the very first time that evening.\n\nSo before the ceremony, we suggest easing the nerves a little, raising a glass of prosecco, and getting to know one another.\n\nPlease come from the very beginning - the celebration will already be underway. There will be time for hugs, conversation, and figuring out who is related to whom.',
+        'At exactly 18:00, the most emotional moment of our day will begin.\nAnd it means the world to us to have you there with us.',
+        'Once the most emotional moments are behind us, we will gather around the dinner table.\n\nThere will be good food, conversations, toasts, laughter, and of course, a few games along the way.\n\nShare stories, including the funny little misadventures we have somehow managed to get ourselves into. These are exactly the memories we wanted to bring everyone together for.',
+        'If the evening feels like it has flown by far too quickly, then everything is going exactly to plan.\nThere will still be cocktails, music, and dancing late into the night.\n\nIn a modest effort to spare the rest of Vienna from our musical taste, we booked the entire club!\n\nOnce night falls and the quiet hours begin, we will simply head a few floors down and keep the evening going.',
       ];
 
       return englishDetails[index] ?? this.content.program[index]?.details ?? '';

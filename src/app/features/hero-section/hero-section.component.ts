@@ -28,7 +28,7 @@ export class HeroSectionComponent {
 
   get invitationText(): string {
     return this.isEnglish
-      ? `${this.greeting} ${this.guest.firstName}, we invite ${this.inviteAddress} to share this day with us!`
+      ? `${this.greeting} ${this.guest.firstName}, we would love for ${this.inviteAddress} to share this day with us!`
       : `${this.greeting} ${this.guest.firstName}, приглашаем ${this.inviteAddress} разделить этот день вместе с нами!`;
   }
 
