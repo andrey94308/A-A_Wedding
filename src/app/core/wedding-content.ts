@@ -10,7 +10,7 @@ export const WEDDING_CONTENT: WeddingContent = {
   mainImage: 'assets/main.png',
   program: [
     {
-      time: '17:00-18:00',
+      time: '17:00 - 18:00',
       title: 'Разливаем проссеко',
       room: 'Gallery',
       details:
@@ -18,7 +18,7 @@ export const WEDDING_CONTENT: WeddingContent = {
       image: 'assets/program/entrance.PNG',
     },
     {
-      time: '18:00-18:30',
+      time: '18:00 - 18:30',
       title: 'Церемония',
       room: 'Library',
       details:
@@ -26,7 +26,7 @@ export const WEDDING_CONTENT: WeddingContent = {
       image: 'assets/program/ceremony.PNG',
     },
     {
-      time: '18:30-22:00',
+      time: '18:30 - 22:00',
       title: 'Просим к столу',
       room: 'Nepliget Park',
       details:
@@ -34,7 +34,7 @@ export const WEDDING_CONTENT: WeddingContent = {
       image: 'assets/program/dining.PNG',
     },
     {
-      time: '22:00',
+      time: '22:00 - 2:00',
       title: 'Время детское, продолжаем',
       room: 'Almanac Club',
       details:
