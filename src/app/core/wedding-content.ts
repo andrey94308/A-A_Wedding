@@ -7,7 +7,7 @@ export const WEDDING_CONTENT: WeddingContent = {
   venueName: 'Almanac Palais Vienna',
   venueAddress: 'Parkring 14-16, 1010 Вена',
   heroImage: 'assets/landing.jpg',
-  mainImage: 'assets/main.png',
+  mainImage: 'assets/main.jpg',
   program: [
     {
       time: '17:00 - 18:00',
@@ -15,7 +15,7 @@ export const WEDDING_CONTENT: WeddingContent = {
       room: 'Gallery',
       details:
         'Так случилось, что наши близкие друзья и родственники живут в разных городах и даже странах. Многие давно знакомы, а некоторые встретятся впервые именно в этот вечер.\n\nПоэтому перед церемонией предлагаем немного сбавить градус волнения, поднять градус проссеко и познакомиться.\n\nПриезжай к началу - праздник уже вовсю начинается. Будет время обняться, пообщаться и разобраться кто кому кем приходится.',
-      image: 'assets/program/entrance.PNG',
+      image: 'assets/program/entrance.jpg',
     },
     {
       time: '18:00 - 18:30',
@@ -23,7 +23,7 @@ export const WEDDING_CONTENT: WeddingContent = {
       room: 'Library',
       details:
         'Ровно в 18:00 начнётся самый волнительный момент нашего дня.\nИ нам очень важно, чтобы в этот момент ты был рядом.',
-      image: 'assets/program/ceremony.PNG',
+      image: 'assets/program/ceremony.jpg',
     },
     {
       time: '18:30 - 22:00',
@@ -31,7 +31,7 @@ export const WEDDING_CONTENT: WeddingContent = {
       room: 'Nepliget Park',
       details:
         'Когда самые волнительные моменты останутся позади, мы соберёмся за праздничным столом.\n\nНас ждут вкусный ужин, разговоры, тосты, смех и, конечно же, конкурсы.\n\nДелись историями и нашими забавными передрягами. Именно ради таких воспоминаний мы и собираем всех за одним столом.',
-      image: 'assets/program/dining.PNG',
+      image: 'assets/program/dining.jpg',
     },
     {
       time: '22:00 - 2:00',
@@ -39,7 +39,7 @@ export const WEDDING_CONTENT: WeddingContent = {
       room: 'Almanac Club',
       details:
         'Если тебе покажется, что вечер пролетел слишком быстро, значит всё идёт по плану.\nВпереди коктейли, музыка и танцы до поздней ночи.\n\nМы скромно решили не испытывать терпение австрийцев нашим музыкальным вкусом и поэтому сняли весь клуб целиком!\n\nТак что с наступлением ночи и закона о тишине мы просто спустимся на несколько этажей ниже и продолжим вечер.',
-      image: 'assets/program/club.PNG',
+      image: 'assets/program/club.jpg',
     },
   ],
 };

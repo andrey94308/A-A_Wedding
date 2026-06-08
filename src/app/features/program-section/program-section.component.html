@@ -54,7 +54,13 @@
           @if (isExpanded(index)) {
             <div class="overflow-hidden bg-almanac-parchment">
               <div class="relative aspect-[4/3] overflow-hidden md:aspect-[3/2]">
-                <img class="absolute inset-0 h-full w-full object-cover" [src]="item.image" [alt]="programTitle(index)" />
+                <img
+                  class="absolute inset-0 h-full w-full object-cover"
+                  [src]="item.image"
+                  [alt]="programTitle(index)"
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div class="absolute inset-0 bg-gradient-to-t from-almanac-ink/72 via-almanac-ink/18 to-transparent"></div>
                 <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent via-almanac-parchment/45 via-60% to-almanac-parchment"></div>
                 <div class="absolute inset-x-0 bottom-0 h-24 bg-almanac-parchment/18 backdrop-blur-[2px] [mask-image:linear-gradient(to_bottom,transparent,black_35%,transparent)]"></div>
