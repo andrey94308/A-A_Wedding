@@ -40,6 +40,12 @@ export class DressCodePageComponent {
       : 'Нам будет особенно приятно, если в своём образе ты поддержишь атмосферу вечера, выбрав наряд в тёмных оттенках.';
   }
 
+  dressCodePalette(guest: Guest): string {
+    return this.isEnglish(guest)
+      ? 'For women, black, graphite, chocolate, dark navy, burgundy, and other deep tones will look beautiful. For men, we suggest a dark suit, but not a black one.'
+      : 'Для девушек прекрасно подойдут чёрный, графитовый, шоколадный, тёмно-синий, бордовый и другие глубокие цвета. Для мужчин - тёмный костюм, но не чёрный.';
+  }
+
   isEnglish(guest: Guest): boolean {
     return guest.lang === 'en';
   }
