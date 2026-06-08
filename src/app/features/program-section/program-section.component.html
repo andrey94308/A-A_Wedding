@@ -19,7 +19,7 @@
       @for (item of content.program; track item.time + item.title; let index = $index) {
         <article class="overflow-hidden rounded-lg bg-almanac-parchment shadow-soft">
           <button
-            class="focus-ring grid w-full px-5 py-5 text-left md:grid-cols-[10rem_1fr_11rem] md:items-center md:px-7"
+            class="focus-ring grid w-full px-5 py-5 text-left"
             type="button"
             [attr.aria-expanded]="isExpanded(index)"
             (click)="toggle(index)"
