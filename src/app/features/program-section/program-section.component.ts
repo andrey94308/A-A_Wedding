@@ -58,7 +58,7 @@ export class ProgramSectionComponent {
   get prologueHostText(): string {
     return this.isEnglish
       ? 'To help friends meet family, family meet friends, and any silence between toasts stay charming rather than awkward, a host will be with us throughout the evening.'
-      : 'А чтобы друзья познакомились с родственниками, родственники - с друзьями, а неловкое молчание между тостами не успело стать слишком неловким, на протяжении всего вечера рядом с нами будет ведущий.';
+      : 'Чтобы друзья познакомились с родственниками, родственники - с друзьями, а неловкое молчание между тостами не успело стать слишком неловким, на протяжении всего вечера рядом с нами будет ведущий.';
   }
 
   get allergyText(): string {
