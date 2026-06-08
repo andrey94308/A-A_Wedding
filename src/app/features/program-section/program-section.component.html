@@ -5,15 +5,13 @@
     <div class="flex flex-col gap-4">
       <article class="rounded-lg bg-almanac-parchment px-5 py-6 shadow-soft md:px-7 md:py-8">
         <div class="mx-auto flex max-w-3xl flex-col gap-4 text-start text-lg leading-8 text-almanac-ink/76 md:text-xl md:leading-9">
-          <p>Дорогие гости,</p>
+          <p>{{ greeting }} {{ guest.firstName }},</p>
+          <p>{{ prologueProgramText }}</p>
           <p>
-            ниже вы найдёте программу вечера и сможете представить, как будет выглядеть наша свадьба. Мы постарались сделать всё максимально удобно: весь праздник пройдёт в Вене, в Palais Hotel Almanac.
+            А чтобы друзья познакомились с родственниками, родственники - с друзьями, а неловкое молчание между тостами не успело стать слишком неловким, на протяжении всего вечера рядом с нами будет ведущий.
           </p>
           <p>
-            А чтобы друзья познакомились с родственниками, родственники — с друзьями, а неловкое молчание между тостами не успело стать слишком неловким, на протяжении всего вечера рядом с нами будет ведущий.
-          </p>
-          <p>
-            P.S. Если у вас есть аллергия на какие-либо продукты или цветы, пожалуйста, сообщите нам об этом заранее. Нам бы очень хотелось, чтобы единственной неожиданностью вечера были наши танцевальные навыки.
+            {{ allergyText }}
           </p>
         </div>
       </article>
@@ -70,7 +68,7 @@
 
               <div class="relative -mt-5 px-5 pb-7 pt-2 md:-mt-7 md:px-8 md:pb-9 md:pt-3">
                 <p class="max-w-3xl whitespace-pre-line text-lg leading-8 text-almanac-ink/76 md:text-xl">
-                  {{ item.details }}
+                  {{ programDetails(index) }}
                 </p>
               </div>
             </div>
@@ -81,7 +79,7 @@
       <article class="rounded-lg bg-almanac-parchment px-5 py-6 shadow-soft md:px-7 md:py-8">
         <div class="mx-auto flex max-w-3xl flex-col gap-4 text-start text-lg leading-8 text-almanac-ink/76 md:text-xl md:leading-9">
           <p>
-            За красивыми залами, цветами, свечами и всей свадебной суетой скрывается довольно простая идея — собрать в одном месте людей, которых мы любим и вместе прожить все эмоции этого дня.
+            За красивыми залами, цветами, свечами и всей свадебной суетой скрывается довольно простая идея - собрать в одном месте людей, которых мы любим и вместе прожить все эмоции этого дня.
           </p>
           <p>Ждём встречи!</p>
           <p class="font-display text-2xl font-semibold text-almanac-ink md:text-3xl">Anna & Andrey</p>

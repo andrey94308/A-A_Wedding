@@ -17,4 +17,8 @@ export class HeroSectionComponent {
   get greeting(): string {
     return this.guest.sex === 'f' ? 'Дорогая' : 'Дорогой';
   }
+
+  get togetherAddress(): string {
+    return this.guest.official ? 'Вами' : 'тобой';
+  }
 }

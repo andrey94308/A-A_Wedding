@@ -1,13 +1,13 @@
 <app-section-shell
   eyebrow="Обновления"
   title="Детали появятся позже"
-  intro="Мы будем обновлять эту страницу, когда финальные детали будут готовы. Мы очень просим оставить свой e-mail, чтобы мы могли отправить изменения по рассадке, дресс-коду и времени."
+  [intro]="introText"
 >
   <div class="max-w-2xl">
     @if (!isEditing && savedEmail) {
       <div class="glass-panel flex flex-col gap-5 rounded-lg p-6 md:flex-row md:items-center md:justify-between">
         <div class="flex flex-col gap-2">
-          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-almanac-gold">Ваш e-mail сохранен</p>
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-almanac-gold">{{ savedEmailLabel }}</p>
           <p class="text-xl font-semibold text-almanac-ink">{{ savedEmail }}</p>
         </div>
 
@@ -51,7 +51,7 @@
           </button>
 
           @if (submitState === 'error') {
-            <p class="text-sm text-almanac-plum">Не удалось сохранить. Попробуйте позже.</p>
+            <p class="text-sm text-almanac-plum">{{ submitErrorText }}</p>
           }
         </div>
       </form>

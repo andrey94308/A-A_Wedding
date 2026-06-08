@@ -8,7 +8,7 @@
     </main>
   } @else if (vm.guest) {
     <app-invite-page-shell [guest]="vm.guest" [content]="content">
-      <app-program-section [content]="content"></app-program-section>
+      <app-program-section [guest]="vm.guest" [content]="content"></app-program-section>
     </app-invite-page-shell>
   }
 }

@@ -28,6 +28,20 @@ export class UpdatesSectionComponent implements OnChanges {
     email: ['', [Validators.required, Validators.email]],
   });
 
+  get introText(): string {
+    return this.guest.official
+      ? 'Мы будем обновлять эту страницу, когда финальные детали будут готовы. Мы очень просим Вас оставить свой e-mail, чтобы мы могли отправить изменения по рассадке, дресс-коду и времени.'
+      : 'Мы будем обновлять эту страницу, когда финальные детали будут готовы. Мы очень просим тебя оставить свой e-mail, чтобы мы могли отправить изменения по рассадке, дресс-коду и времени.';
+  }
+
+  get savedEmailLabel(): string {
+    return this.guest.official ? 'Ваш e-mail сохранен' : 'Твой e-mail сохранен';
+  }
+
+  get submitErrorText(): string {
+    return this.guest.official ? 'Не удалось сохранить. Попробуйте позже.' : 'Не удалось сохранить. Попробуй позже.';
+  }
+
   get emailError(): string {
     const control = this.form.controls.email;
 

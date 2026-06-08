@@ -13,6 +13,7 @@ interface GuestApiResponse {
     uuid: string;
     name: string;
     sex?: 'f' | 'm';
+    official?: boolean | number | string;
     email?: string;
   };
   error?: string;
@@ -53,8 +54,13 @@ export class InviteDataService {
       uuid: response.guest.uuid,
       firstName: response.guest.name,
       sex: response.guest.sex,
+      official: this.normalizeOfficial(response.guest.official),
       email: response.guest.email,
     };
+  }
+
+  private normalizeOfficial(value: boolean | number | string | undefined): boolean {
+    return value === true || value === 1 || value === '1';
   }
 
   private findFallbackGuest(uuid: string): Guest | undefined {
